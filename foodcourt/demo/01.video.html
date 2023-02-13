@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* 视频图片这列资源都具有原始比例 */
+      video {
+        /* 修改为块元素，解决幽灵空白节点问题 */
+        /* 如果只是单独修改宽或高，那另一个属性会自动适配比例进行调整 */
+        width: 200px;
+        /* 当固定宽和高，但比例与原始比例不一致时，会出现变形,需要选择适配方案 */
+
+        height: 200px;
+        object-fit: cover;
+        border: 3px solid red;
+        display: block;
+      }
+      #box {
+        border: 2px solid green;
+      }
+      #hh {
+        width: 200px;
+        height: 200px;
+        border: 1px solid yellow;
+      }
+      #hh {
+        background-color: aqua;
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 控制器controls -->
+    <!-- 更多的属性： -->
+    <!-- autoplay 自动播放，不推荐采用，特别是有声音的资源，而且在一些浏览器中，如果视频未静音muted,自动播放不会生效 -->
+    <!-- <div id="hh"></div> -->
+    <!-- 视频封面 -->
+    <!-- preload预加载,可选值有3个 none不预加载:等用户播放时临时下载,适合网页上有大量视频需要用户选择性下载时
+         auto预加载，提前下载视频资源，用户播放时更加流畅，但是仅适合必须播放的视频，例如背景视频
+         当具有autoplay这个自动播放的属性是，默认就是预加载
+         metadata ：下载元数据，视频相关信息，例如长度，但不含视频本身-->
+
+    <!-- poster海报，封面 -->
+    <!-- 默认情况：视频加载时，会把其第一帧画面作为封面 -->
+    <!-- 但是关闭预加载，则需要手动设置封面图 -->
+    <div id="box">
+      <video
+        poster="../assets/img/index/11.jpg"
+        preload="none"
+        src="../assets/video/11.mp4"
+        controls
+        loop
+        muted
+      ></video>
+    </div>
+  </body>
+</html>

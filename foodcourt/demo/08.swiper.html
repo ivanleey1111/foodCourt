@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="../node_modules/swiper/swiper-bundle.min.css"
+    />
+    <style>
+      .swiper {
+        width: 600px;
+        height: 300px;
+        border: 2px solid blue;
+      }
+      .swiper-slide > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img
+            src="https://web.codeboy.com/xuezi/img/index/banner1.png"
+            alt=""
+          />
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="https://web.codeboy.com/xuezi/img/index/banner2.png"
+            alt=""
+          />
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="https://web.codeboy.com/xuezi/img/index/banner3.png"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+    <script src="../node_modules/swiper/swiper-bundle.min.js"></script>
+    <script>
+      var mySwiper = new Swiper(".swiper", {
+        loop: true,
+        effect: "cube",
+        autoplay: {
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        },
+        // slidesPerView: 3,
+        // centeredSlides: true,
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+/* 样式重置 :没有特异性，所有的网站都这么设置*/
+* {
+    box-sizing: border-box;
+}
+
+html{
+    /* 默认会被子元素集成的样式 */
+    /* 统一不同浏览器的默认字体大小 */
+    font-size: 16px;
+    color: #333;
+}
+
+img,video{
+    display: block;
+    object-fit: cover;
+}
+
+body,ul,h1,h2,h3,h4,h5,h6,p{
+    margin: 0;
+    padding: 0;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+table{
+    border-collapse: collapse;
+}
+
+/* 重置输入框 */
+input,button{
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
+
+i{
+    display: inline-block;
+}
+
+
+

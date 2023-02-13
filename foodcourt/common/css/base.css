@@ -1,0 +1,40 @@
+/* 基础样式-当前项目具有的个性化通用样式 */
+/* 设置body的最小宽度 */
+body{
+    min-width: 1000px;
+}
+
+.breadcrumb{
+    padding: 10px 0;
+}
+.breadcrumb>a{
+    color: #333;
+}
+
+button:active{
+    opacity: 0.8;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* 显示一行文本多余的部分。。。 */
+.line-1{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+::-webkit-scrollbar{
+    width: 8px;
+    height: 8px;
+
+}
+/* 轨道颜色 */
+::-webkit-scrollbar-track{
+    background-color: #ddd9cf;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #b3aa94;
+    border-radius: 10px;
+}

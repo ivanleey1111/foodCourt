@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script src="./xoxo.js"></script>
+    <script>
+      let aa = {
+        show: 6,
+        f1: function () {
+          console.log("f1 run");
+        },
+        f2: function () {
+          return () => {
+            console.log(this.show);
+          };
+        },
+      };
+
+      aa.f2();
+      let cc = {
+        show: 9,
+        ff: function (x) {
+          x();
+        },
+      };
+      cc.f2 = aa.f2;
+      cc.ff(cc.f2());
+    </script>
+  </body>
+</html>

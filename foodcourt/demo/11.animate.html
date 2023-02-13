@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/animate.css/animate.min.css" />
+  </head>
+  <body>
+    <!-- animate__animated基础样式，添加任何动画前，必须书写此基础样式 -->
+    <h1 align="center" class="animate__animated">Hello Animate</h1>
+
+    <h1 align="center" class="animate__animated">Hello Animate</h1>
+    <button>开始动画</button>
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script>
+      // 通过dom添加动画
+      //动画触发的时机：样式从无到有时，才会出现
+      //多次动画，则需要在动画结束时，立刻删除样式，便于下一次的添加
+      //在dom事件中查找，与动画相关的
+      $("button").click(function () {
+        $("h1").addClass("animate__bounce");
+      });
+      $("h1").on("animationend", function () {
+        $("h1").removeClass("animate__bounce");
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+#header {
+  background-color: #f75148;
+}
+#header > div {
+  display: flex;
+  width: 1000px;
+  margin: 0 auto;
+  height: 80px;
+  align-items: center;
+}
+#header > div img {
+  height: 60px;
+}
+#header > div > .search {
+  background-color: white;
+  display: flex;
+  height: 40px;
+  border-radius: 100px;
+  padding: 3px;
+  margin: 0 20px;
+}
+#header > div > .search > input {
+  font-size: 18px;
+  padding-left: 10px;
+  width: 150px;
+}
+#header > div > .search > button {
+  color: white;
+  background-color: #f75148;
+  border-radius: 100px;
+  width: 50px;
+}
+#header > div > ul {
+  display: flex;
+}
+#header > div > ul > li > a {
+  line-height: 80px;
+  display: inline-block;
+  padding: 0 12px;
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+}
+#header > div > ul > li > a:hover {
+  background-color: #f8625b;
+}
+#header > div > a {
+  color: white;
+  margin-left: auto;
+}
+#header > div > div:last-child {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+#header > div > div:last-child > img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+#header > div > div:last-child > a {
+  color: white;
+}/*# sourceMappingURL=header.css.map */

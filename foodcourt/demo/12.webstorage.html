@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 有两个常用的存储空间
+    本地存储空间：localStorage：永久性存储
+    会话：sessionStorage ---临时性存储
+
+    
+    -->
+    <script>
+      //setItem：用于向存储空间中添加新的内容
+      //参数1：属性名--必须字符串
+      //参数2：属性值--必须字符串
+
+      localStorage.setItem("uname", "凯凯");
+      localStorage.setItem("age", 20); //非字符串的值，会自动转为字符串存储
+      localStorage.setItem("marry", true);
+      var emp = { ename: "泡泡", age: 18, phone: "10086" };
+      //如果值四对象类型，因该手动转JSON字符串再存储
+      localStorage.setItem("pp", JSON.stringify(emp));
+      //////////////////////////////////////////////////////////////////
+      sessionStorage.setItem("uname", "凯凯");
+      sessionStorage.setItem("age", 20); //非字符串的值，会自动转为字符串存储
+      sessionStorage.setItem("marry", true);
+      var emp = { ename: "泡泡", age: 18, phone: "10086" };
+      //如果值四对象类型，因该手动转JSON字符串再存储
+      sessionStorage.setItem("pp", JSON.stringify(emp));
+    </script>
+    <!-- 读取内容 -->
+    <button id="readmsg">读取存储的内容</button>
+    <button id="removeOne">删除指定元素</button>
+    <button id="clearAll">清空所有</button>
+    <script>
+      removeOne.onclick = function () {
+        console.log(111);
+        sessionStorage.removeItem("age"); //删除age属性
+      };
+      clearAll.onclick = function () {
+        sessionStorage.clear();
+      };
+      readmsg.onclick = function () {
+        //getItem()
+        console.log(localStorage.getItem("uname"));
+        console.log(sessionStorage.getItem("uname"));
+        //如果读取的内容不存在
+        console.log(localStorage.getItem("xxx")); //null
+        //如果读取的是json字符串，要转换回对象
+        console.log(JSON.parse(localStorage.getItem("pp")));
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,220 @@
+#body{
+    >.top{
+        background-color: #f7f7f7;
+        >div{
+            width: 1000px;
+            margin: 0 auto;
+            padding-bottom: 10px;
+            >div{
+                display: flex;
+                justify-content: space-between;
+                padding: 10px 0;
+                >a{
+                    color: white;
+                    font-weight: bold;
+                    line-height: 24px;
+                    padding: 5px 10px;
+                    background-image: linear-gradient(to right,#f67236,#f64e36);
+                    border-radius: 100px;
+                }
+            }
+            >ul{
+                display: flex;
+                justify-content: space-between;
+                >li{
+                    width: 242px;
+                    height: 500px;
+                    overflow: hidden;
+                    border-radius: 8px;
+                    position:relative;
+                    >div{
+                        // //让遮罩不响应鼠标事件
+                        pointer-events: none;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        >strong{
+                            color: white;
+                            font-size: 22px;
+                            position: absolute;
+                            left: 10px;
+                            bottom: 10px;
+                        }
+                        >i{
+                            position: absolute;
+                            // border: 1px solid red;
+                            width: 62px;
+                            height:78px;
+                            background-position: -24px -32px;
+                            background-size: 100px;
+                            left: 50%;
+                            top: 50%;
+                            transform: translate(-50%,-50%);
+                         }
+
+                    }
+                    
+                    >video{
+                        width: 332px;
+                        height: 100%;
+                        filter: blur(2px);
+                    }
+                }
+            }
+        }
+    }
+    >.main{
+        width: 1000px;
+        margin: 0 auto;
+        padding:20px 0;
+        >.box{
+            display: flex;
+            justify-content: space-between;
+            >div:first-child{
+                width: 70%;
+                >.today-hot{
+                    >ul{
+                        margin-top: 10px;
+                        display: flex;
+                        flex-wrap: wrap;
+                        >li>a{
+                            display: inline-block;
+                            padding: 6px 15px;
+                            background-color: #f5f5f5;
+                            margin: 0 10px 10px 0;
+                            border-radius: 100px;
+                            color: #333;
+                            &.active{
+                                color: #f65337;
+                                background-color: #fee4e1;
+                            }
+                            transition: 0.2s;
+                            &:hover{
+                                box-shadow: 0 0 2px 2px rgba(0,0,0,0.1);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        >.index-items{
+            >h2{
+                margin: 20px 0 10px 0;
+            }
+            >ul{
+                display: flex;
+                justify-content: space-between;
+                >li{
+                    width: 19%;
+                    display: flex;
+                    flex-direction: column;
+                    cursor: pointer;
+                     
+                    border-radius: 6px;
+                    overflow: hidden;
+                    position: relative;
+                    &:hover{
+                        >strong{
+                            color: #f64e36;
+                        }
+                        >span{
+                            bottom: 46px;
+                        }
+                    }
+                    
+                       
+                        >span{
+                            position: absolute;
+                            color: white;
+                            background-color: rgba(0,0,0,0.5);
+                            bottom: -25px;
+                            width: 100%;
+                            text-align: center;
+                            font-size: 14px;
+                            line-height: 20px;
+                            transition: 0.2s;
+                        }
+                        img{
+                       
+                        width: 100%;
+                        height: 265px;
+
+                    
+                }
+                    >p{
+                        font-size:12px ;
+                        color: #888;
+                        &::before{
+                            content: '';
+                            display: inline-block;
+                            //css中，路径必须相对当前scss文件的
+                            background-image: url(../../assets/img/453.png);
+                            width: 14px;
+                            height: 14px;
+                            background-size: 25px;
+                            // border: 1px solid blue;
+                            background-position-y: -50px;
+                            transform: translateY(3px);
+                            margin-right: 2px;
+                        }
+                        
+                    }
+                    >strong{
+                        margin: 4px 0;
+                    }
+                }
+            }
+        }
+        >.meals{
+            display: flex;
+            flex-direction: column;
+            
+            >.swiper{
+                width: 700px;
+                margin: 10px 0;
+                >.swiper-wrapper{
+                    >.swiper-slide{
+                        .content{
+                            width: 230px;
+                            height: 365px;
+                            overflow: hidden;
+                            border-radius: 10px;
+                            >img{
+                                width: 100%;
+                                height: 88%;
+                                object-fit: cover;
+                                border-radius: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+            >.above{
+                display: flex;
+                margin-top: 20px;
+                >ul{
+                    display: flex;
+                    margin-left: 15px;
+                    align-items: center;
+                    
+                    >li{
+                        color: white;
+                        width:66px;
+                        height: 35px;
+                        background-color: gray;
+                        margin: 0 10px;
+                        text-align: center;
+                        line-height: 30px;
+                        border-radius: 30px;
+                        cursor: pointer;
+                        &.active{
+                            background-color: orange;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

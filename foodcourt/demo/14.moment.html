@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>日期处理类库</title>
+  </head>
+  <body>
+    <!-- 作用：快速帮你把时间戳 转化成需要的日期格式 -->
+    <script src="../node_modules/moment/moment.js"></script>
+    <script>
+      const now = new Date().getTime();
+      console.log(now);
+      let m = moment(now);
+      console.log(m);
+      //   format：格式化输出
+      console.log(m.format("YYYY年"));
+    </script>
+  </body>
+</html>

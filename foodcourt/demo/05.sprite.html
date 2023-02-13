@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: green;
+      }
+      i {
+        /* 默认是行元素，无法直接给宽高，改成行内块才能配合精灵图使用 */
+        display: inline-block;
+        width: 120px;
+        height: 150px;
+        border: 1px solid red;
+        background-position: -48px -65px;
+        transform: scale(0.2);
+        transform-origin: 0 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 精灵图,需要利用背景图来实现 -->
+    <!-- 在实际开发中，小图标icon此单词也是i开头，所以征用了i斜体标签专门做图标 -->
+    <i>斜体标签</i>
+    <i style="background-image: url('../assets/img/979.png')"></i>
+  </body>
+</html>

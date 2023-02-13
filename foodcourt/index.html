@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="./assets/img/favicon.ico"
+      type="image/x-icon"
+    />
+    <title>美食广场</title>
+    <link rel="stylesheet" href="./common/css/reset.css" />
+    <link rel="stylesheet" href="./common/css/base.css" />
+    <link rel="stylesheet" href="./node_modules/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./node_modules/animate.css/animate.min.css" />
+  </head>
+  <body>
+    <!-- 网站整体分3个部分，上中下结构，其中中间部分会变化 -->
+
+    <div id="header"></div>
+
+    <div id="body"></div>
+
+    <div id="footer"></div>
+
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script>
+      //模块化：把1个网页拆分成不同的部分，分别书写，最后利用load加载，组合在一起
+
+      //头部栏：属于整个页面的一个组成部分，但是其不会变更
+      //概念：组件component
+
+      $("#header").load("./components/header/header.html");
+      $("#footer").load("./components/footer/footer.html");
+
+      //重点：读取路径中的参数p，拼接出其对应的资源地址
+      //利用短路语法，为p增加默认值，如果路径参数没有p，则默认是home
+      const p = new URLSearchParams(location.search).get("p") || "home";
+      //一个网页由三个文件组成，html需要搭配对应的js和css
+      //即：当加载完html文件后，需要加载其关联的css和js
+      //参数2：当加载html完毕后自动触发
+      $("#body").load(`./pages/${p}/${p}.html`, () => {
+        //把对应的css文件，添加到head里
+        $("head").append(
+          `<link rel="stylesheet" href="./pages/${p}/${p}.css" />`
+        );
+
+        //加载对应的脚本文件
+
+        //此处不能用字符串方式书写，脚本的引入，会被错误认为是结束的脚本标签
+        var script = document.createElement("script"); //利用dom方式创建脚本元素
+        script.src = `./pages/${p}/${p}.js`;
+        $("body").append(script);
+      });
+      console.log("imhere", this);
+    </script>
+    <script src="./node_modules/swiper/swiper-bundle.min.js"></script>
+  </body>
+</html>

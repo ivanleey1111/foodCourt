@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../common/css/reset.css" />
+    <link rel="stylesheet" href="../node_modules/animate.css/animate.min.css" />
+    <style>
+      body {
+        width: 1000px;
+      }
+      ul {
+        display: flex;
+        justify-content: center;
+      }
+
+      li {
+        text-align: center;
+        border: 1px solid black;
+        width: 50px;
+        height: 40px;
+        line-height: 40px;
+        margin: 10px;
+        cursor: pointer;
+      }
+      button {
+        border: 1px solid black;
+        width: 50px;
+        height: 30px;
+        display: block;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+    </ul>
+    <button>++++</button>
+    <button>++++</button>
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="./aa.js"></script>
+    <script>
+      $("ul").on("click", "li", function () {
+        console.log($("li") === this, $("li"), $(this));
+        let col = $("html").css("background-color");
+        $("li").css("background-color", col);
+        $(this).css("background-color", "orange");
+        $(this).addClass("animate__animated animate__shakeX");
+        $(this).on("animationend", function () {
+          $(this).removeClass("animate__shakeX");
+        });
+      });
+
+      $("button").click(function () {
+        $("ul").append(`
+        
+          <li>5</li>
+        
+        
+        
+        `);
+        $("li").addClass("animate__animated animate__shakeX");
+        //$("li").removeClass("animate__shakeX");
+        $("li").on("animationend", function () {
+          $(this).removeClass("animate__shakeX");
+        });
+      });
+    </script>
+  </body>
+</html>

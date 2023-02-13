@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../common/css/reset.css" />
+    <style>
+      ul {
+        display: flex;
+        width: 1000px;
+        justify-content: space-between;
+      }
+      li {
+        width: 242px;
+        height: 400px;
+        overflow: hidden;
+        border-radius: 6px;
+      }
+      li > video {
+        height: 100%;
+        /* 宽度：激活时 */
+        width: 332px;
+        filter: blur(2px);
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li><video src="../assets/video/11.mp4"></video></li>
+      <li><video src="../assets/video/22.mp4"></video></li>
+      <li><video src="../assets/video/33.mp4"></video></li>
+      <li><video src="../assets/video/44.mp4"></video></li>
+    </ul>
+
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script>
+      $("ul>li>video").click(function () {
+        if (this.paused) {
+          //唯一性播放:暂停所有视频
+          $("video").trigger("pause");
+          $("ul>li>video").css("filter", "blur(2px)");
+          //利用原生dom的方案，实现play方法的触发
+          //   this.play();
+          //jquery只封装了常用事件，例如click
+          //play非常用事件，所以需要利用通用方案触发
+          $(this).trigger("play");
+
+          $(this).css("filter", "blur(0)");
+          $(this)
+            .parent()
+            .stop()
+            .animate({ width: 332 })
+            .siblings()
+            .stop()
+            .animate({ width: 212 });
+        } else {
+          $(this).trigger("pause");
+          $(this).css("filter", "blur(2px)");
+          $("ul>li").stop().animate({ width: 242 });
+        }
+      });
+    </script>
+  </body>
+</html>
